@@ -22,5 +22,4 @@ const useWebSocket = (url: string) => {
 
 export default useWebSocket;
 
-// Adicionando uma exportação vazia para resolver o erro
 export {};
