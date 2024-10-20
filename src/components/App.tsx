@@ -1,6 +1,6 @@
-import React from 'react';
-import { PriceProvider } from '../context/PriceContext';
-import SymbolList from './SymbolList';
+import React from "react";
+import { PriceProvider } from "../context/PriceContext";
+import SymbolList from "./SymbolList";
 
 const App: React.FC = () => {
   return (
@@ -14,4 +14,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-

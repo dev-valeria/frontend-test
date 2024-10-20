@@ -1,5 +1,5 @@
 // Exemplo básico de uso de WebSocket
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useWebSocket = (url: string) => {
   const [data, setData] = useState<any>(null);
