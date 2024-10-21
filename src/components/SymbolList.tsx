@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ExchangeInfoResponse, SymbolInfo } from '../types/PriceData';
 import './SymbolList.css'; 
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 interface SymbolListProps {
   onSelectSymbol: (symbol: string) => void;
@@ -36,15 +37,19 @@ const SymbolList: React.FC<SymbolListProps> = ({ onSelectSymbol }) => {
 
   return (
     <div className="table-container">
-      {/* Lista de Símbolos */}
-      <div className="symbol-list-container">
-        <input
-          type="text"
-          placeholder="Search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="search-input"
-        />
+  {/* Lista de Símbolos */}
+  <div className="symbol-list-container">
+    <div className="search-container">
+      <i className="fas fa-search search-icon"></i>
+      <input
+        type="text"
+        placeholder="Symbol"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search-input"
+      />
+    </div>
+
         <ul className="symbol-list-items">
           {filteredSymbols.map((symbol) => (
             <li key={symbol.symbol} className="symbol-item">
