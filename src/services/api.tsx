@@ -1,12 +1,22 @@
-import axios from 'axios';
+// src/services/api.ts
+import { ExchangeInfoResponse } from '../types/PriceData';
 
-// Função para buscar as informações de troca da Binance
-export const getExchangeInfo = async () => {
+export const getExchangeInfo = async (): Promise<ExchangeInfoResponse> => {
   try {
-    const response = await axios.get('https://api.binance.com/api/v3/exchangeInfo');
-    return response.data;  // Retorna os dados da API
+    const response = await fetch("https://api.binance.com/api/v3/exchangeInfo");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data; // A API retorna a estrutura que estamos esperando
   } catch (error) {
-    console.error("Erro ao buscar informações de troca:", error);
-    throw error;  // Propaga o erro para ser tratado pelo chamador
+    console.error("Error fetching exchange info:", error);
+    throw error; // Lançar o erro para que possa ser tratado no componente
   }
 };
+
+
+
+
+

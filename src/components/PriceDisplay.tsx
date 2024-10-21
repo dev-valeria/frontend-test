@@ -1,4 +1,3 @@
-// src/context/PriceContext.tsx
 
 import React, { createContext, useState, ReactNode } from "react";
 
