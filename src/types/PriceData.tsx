@@ -1,6 +1,4 @@
-// src/types.ts
 
-// Interface para os dados de preço
 export interface PriceData {
   s: string; // Símbolo
   c: string; // Preço atual
@@ -9,13 +7,11 @@ export interface PriceData {
   a: string; // Melhor pedido
 }
 
-// Interface para o símbolo
 export interface Symbol {
   symbol: string; // Nome do símbolo
   price: string; // Preço atual do símbolo
 }
 
-// Interface para as informações do símbolo, retornadas pela API da Binance
 export interface SymbolInfo {
   symbol: string;      // Símbolo
   priceChange: string; // Mudança de preço
@@ -30,7 +26,6 @@ export interface SymbolInfo {
   volume: string;      // Volume total negociado
 }
 
-// Interface para a resposta da API da Binance
 export interface ExchangeInfoResponse {
   symbols: SymbolInfo[]; // Array de símbolos
 }

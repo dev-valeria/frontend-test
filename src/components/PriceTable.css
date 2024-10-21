@@ -73,7 +73,11 @@
 
 .app-title {
   text-align: center;
-
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 

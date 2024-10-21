@@ -1,17 +1,13 @@
-// src/context/PriceContext.tsx
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Definindo o tipo do contexto
 interface PriceContextType {
   symbols: string[];
-  prices: Record<string, number>; // Preço para cada símbolo
-  addSymbol: (symbol: string) => void; // Função para adicionar um símbolo
+  prices: Record<string, number>; 
+  addSymbol: (symbol: string) => void; 
 }
 
-// Criando o contexto
 const PriceContext = createContext<PriceContextType | undefined>(undefined);
 
-// Provedor do contexto
 const PriceProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [symbols, setSymbols] = useState<string[]>([]);
   const [prices, setPrices] = useState<Record<string, number>>({});
@@ -20,23 +16,21 @@ const PriceProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     setSymbols((prev) => [...prev, symbol]);
   };
 
-  // Lógica para receber dados do WebSocket
   useEffect(() => {
     const ws = new WebSocket("wss://stream.binance.com:9443/ws");
 
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);
-      // Aqui você deve implementar a lógica para atualizar os preços
       if (data.s && data.p) {
         setPrices((prevPrices) => ({
           ...prevPrices,
-          [data.s]: parseFloat(data.p), // Atualiza o preço do símbolo
+          [data.s]: parseFloat(data.p), 
         }));
       }
     };
 
     return () => {
-      ws.close(); // Fecha a conexão quando o componente é desmontado
+      ws.close(); 
     };
   }, []);
 
@@ -47,7 +41,6 @@ const PriceProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   );
 };
 
-// Hook personalizado para usar o contexto
 const usePriceContext = () => {
   const context = useContext(PriceContext);
   if (context === undefined) {

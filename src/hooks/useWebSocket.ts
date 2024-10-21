@@ -1,4 +1,3 @@
-// Exemplo básico de uso de WebSocket
 import { useEffect, useState } from "react";
 
 const useWebSocket = (url: string) => {

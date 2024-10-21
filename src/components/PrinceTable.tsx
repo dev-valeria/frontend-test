@@ -15,8 +15,8 @@ interface PriceTableProps {
 
 const PriceTable: React.FC<PriceTableProps> = ({ symbols }) => {
   const [priceData, setPriceData] = useState<PriceData[]>([]);
-  const [lists, setLists] = useState<string[]>(['List A']); // Estado para armazenar as listas
-  const [selectedList, setSelectedList] = useState<string>('List A'); // Estado para a lista selecionada
+  const [lists, setLists] = useState<string[]>(['List A']); 
+  const [selectedList, setSelectedList] = useState<string>('List A'); 
 
   useEffect(() => {
     const ws = new WebSocket('wss://stream.binance.com:9443/ws/!ticker@arr');

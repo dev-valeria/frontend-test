@@ -1,4 +1,3 @@
-// src/services/api.ts
 import { ExchangeInfoResponse } from '../types/PriceData';
 
 export const getExchangeInfo = async (): Promise<ExchangeInfoResponse> => {
@@ -9,10 +8,10 @@ export const getExchangeInfo = async (): Promise<ExchangeInfoResponse> => {
     }
     
     const data = await response.json();
-    return data; // A API retorna a estrutura que estamos esperando
+    return data; 
   } catch (error) {
     console.error("Error fetching exchange info:", error);
-    throw error; // Lançar o erro para que possa ser tratado no componente
+    throw error; 
   }
 };
 
