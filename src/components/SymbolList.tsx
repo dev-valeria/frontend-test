@@ -1,21 +1,18 @@
-import React, { useContext } from "react";
-import { PriceContext } from "../context/PriceContext";
+// src/components/SymbolList.tsx
 
-const SymbolList: React.FC = () => {
-  const priceContext = useContext(PriceContext);
+import React from "react";
 
-  if (!priceContext) return null;
+interface SymbolListProps {
+  symbols: string[]; // Defina a propriedade 'symbols' como um array de strings
+}
 
-  const { symbols, addSymbol } = priceContext;
-
+const SymbolList: React.FC<SymbolListProps> = ({ symbols }) => {
   return (
     <div>
       <h2>Lista de Símbolos</h2>
-      <button onClick={() => addSymbol("ETHBTC")}>Adicionar ETHBTC</button>
-      <button onClick={() => addSymbol("BNBBTC")}>Adicionar BNBBTC</button>
       <ul>
-        {symbols.map((symbol) => (
-          <li key={symbol}>{symbol}</li>
+        {symbols.map((symbol, index) => (
+          <li key={index}>{symbol}</li> // Use um índice ou um ID exclusivo como chave
         ))}
       </ul>
     </div>
@@ -23,3 +20,11 @@ const SymbolList: React.FC = () => {
 };
 
 export default SymbolList;
+
+
+
+
+
+
+
+
