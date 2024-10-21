@@ -43,21 +43,23 @@ const PriceTable: React.FC<PriceTableProps> = ({ symbols }) => {
     <table className="price-table">
       <thead>
         <tr>
-          <th>Symbol</th>
-          <th>Last Price</th>
-          <th>Bid Price</th>
-          <th>Ask Price</th>
-          <th>Price Change (%)</th>
-        </tr>
+    <th>SYMBOL</th>
+    <th>LAST PRICE</th>
+    <th>BID PRICE</th>
+    <th>ASK PRICE</th>
+    <th>PRICE CHANGE (%)</th>
+  </tr>
       </thead>
       <tbody>
         {priceData.map((data) => (
           <tr key={data.symbol}>
             <td>{data.symbol}</td>
-            <td>{data.lastPrice}</td>
-            <td>{data.bidPrice}</td>
-            <td>{data.askPrice}</td>
-            <td>{data.priceChangePercent}%</td>
+            <td>{parseFloat(data.lastPrice).toFixed(5)}</td>
+            <td>{parseFloat(data.bidPrice).toFixed(5)}</td>
+            <td>{parseFloat(data.askPrice).toFixed(5)}</td>
+            <td><span className={parseFloat(data.priceChangePercent) > 0 ? 'positive-change' : 'negative-change'}>
+      {(parseFloat(data.priceChangePercent) * 100).toFixed(3)}% 
+    </span></td>
           </tr>
         ))}
       </tbody>

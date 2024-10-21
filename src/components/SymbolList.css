@@ -48,10 +48,8 @@
 
 .price-table td:last-child {
   color: #e53935;
-  /* Estiliza a variação de preço percentual em vermelho */
 }
 
-/* Estilos aplicados à lista de símbolos */
 .symbol-list-container {
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -62,7 +60,6 @@
 .search-input {
   width: 85%;
   padding: 10px 15px 10px 35px;
-  /* Adiciona espaçamento à esquerda para o ícone */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
@@ -70,10 +67,8 @@
 .search-icon {
   position: absolute;
   left: 10px;
-  /* Posição à esquerda dentro do input */
   top: 50%;
   transform: translateY(-50%);
-  /* Centraliza o ícone verticalmente */
   color: #888;
   font-size: 16px;
 }
@@ -83,7 +78,6 @@
   padding: 0;
   max-height: 300px;
   overflow-y: auto;
-  /* Permite rolar a lista */
 }
 
 .symbol-item {
@@ -120,9 +114,24 @@
   background-color: #004d40;
 }
 
-/* Contêiner para o campo de busca e ícone */
 .search-container {
   position: relative;
-  /* Para posicionar o ícone dentro do campo de busca */
   width: 100%;
+}
+
+.positive-change {
+  background-color: #4caf50;
+  /* Verde */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.negative-change {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
 }
