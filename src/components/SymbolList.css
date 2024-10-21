@@ -1,5 +1,6 @@
 /* Contêiner para as tabelas */
 .table-container {
+  font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: flex-start;
   width: 100%;
@@ -7,16 +8,11 @@
   margin: 0;
 }
 
-/* Estilo individual para cada tabela */
-.price-table-container,
-.symbol-list-container {
-  width: 172%;
-}
-
 .price-table-container {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 120%;
 }
 
 .price-table {
@@ -64,18 +60,27 @@
 }
 
 .search-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+  width: 85%;
+  padding: 10px 15px 10px 35px;
+  /* Adiciona espaçamento à esquerda para o ícone */
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 16px;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  /* Posição à esquerda dentro do input */
+  top: 50%;
+  transform: translateY(-50%);
+  /* Centraliza o ícone verticalmente */
+  color: #888;
   font-size: 16px;
 }
 
 .symbol-list-items {
   list-style: none;
   padding: 0;
-  margin: 0;
   max-height: 300px;
   overflow-y: auto;
   /* Permite rolar a lista */
@@ -113,4 +118,11 @@
 
 .add-button:hover {
   background-color: #004d40;
+}
+
+/* Contêiner para o campo de busca e ícone */
+.search-container {
+  position: relative;
+  /* Para posicionar o ícone dentro do campo de busca */
+  width: 100%;
 }
