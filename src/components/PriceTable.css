@@ -1,0 +1,36 @@
+/* Estilos já aplicados na tabela de preços */
+.price-table-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.price-table th {
+  background-color: #00695c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.price-table td {
+  border-bottom: 1px solid #eeeeee;
+  color: #333333;
+}
+
+.price-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.price-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.price-table td:last-child {
+  color: #e53935;
+}

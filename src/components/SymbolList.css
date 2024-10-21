@@ -1,30 +1,116 @@
-/* src/components/SymbolList.css */
-.list-container {
+/* Contêiner para as tabelas */
+.table-container {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 20px;
+  margin: 0;
+}
+
+/* Estilo individual para cada tabela */
+.price-table-container,
+.symbol-list-container {
+  width: 172%;
+}
+
+.price-table-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.price-table {
+  width: 100%;
+  padding: 20px 176px;
+  border-collapse: collapse;
+}
+
+.price-table th,
+.price-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.price-table th {
+  background-color: #00695c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.price-table td {
+  border-bottom: 1px solid #eeeeee;
+  color: #333333;
+}
+
+.price-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.price-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.price-table td:last-child {
+  color: #e53935;
+  /* Estiliza a variação de preço percentual em vermelho */
+}
+
+/* Estilos aplicados à lista de símbolos */
+.symbol-list-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.symbol-list-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  /* Permite rolar a lista */
 }
 
 .symbol-item {
-  margin: 10px 0;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #f9f9f9;
-  transition: background 0.3s;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
 }
 
-.symbol-item:hover {
-  background: #e9e9e9;
+.symbol-item label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
-@media (max-width: 600px) {
-  .list-container {
-    padding: 10px;
-  }
+.symbol-item input[type="checkbox"] {
+  margin-right: 10px;
+}
 
-  .symbol-item {
-    padding: 10px;
-    font-size: 14px;
-  }
+.add-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00695c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #004d40;
 }
