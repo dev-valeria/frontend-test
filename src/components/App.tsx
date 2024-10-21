@@ -1,36 +1,42 @@
-// src/components/App.tsx
-
-import React, { useEffect, useState } from "react";
-import { PriceProvider } from "../context/PriceContext";
-import SymbolList from "./SymbolList";
-import { getExchangeInfo } from "../services/api"; // Importa o serviço de API
+import React, { useState } from 'react';
+import SymbolList from '../components/SymbolList';
+import PriceTable from '../components/PrinceTable'; 
 
 const App: React.FC = () => {
-  const [symbols, setSymbols] = useState<string[]>([]); // Estado para armazenar os símbolos
+  const [selectedSymbols, setSelectedSymbols] = useState<string[]>([]);
 
-  useEffect(() => {
-    const fetchSymbols = async () => {
-      try {
-        const data = await getExchangeInfo();
-        const symbolList = data.symbols.map((symbol: any) => symbol.symbol); // Extrai os símbolos
-        setSymbols(symbolList); // Atualiza o estado com os símbolos
-      } catch (error) {
-        console.error("Erro ao buscar informações de troca", error);
-      }
-    };
-
-    fetchSymbols(); // Chama a função para buscar os dados quando o componente é montado
-  }, []);
+  const handleSelectSymbol = (symbol: string) => {
+    setSelectedSymbols((prevSymbols) =>
+      prevSymbols.includes(symbol)
+        ? prevSymbols.filter((s) => s !== symbol)
+        : [...prevSymbols, symbol]
+    );
+  };
 
   return (
-    <PriceProvider>
-      <div>
-        <h1>Binance WebSocket Pricing App</h1>
-        <SymbolList symbols={symbols} /> {/* Passa os símbolos para o componente */}
+    <div className="app">
+      <div className="table-container">
+        <div className="symbol-list-container">
+          <SymbolList onSelectSymbol={handleSelectSymbol} />
+        </div>
+        <div className="price-table-container">
+          <PriceTable symbols={selectedSymbols} />
+        </div>
       </div>
-    </PriceProvider>
+    </div>
   );
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
 
