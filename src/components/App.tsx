@@ -15,6 +15,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
+<h1 className="app-title">Gerenciamento de Preços Binance</h1>
       <div className="table-container">
         <div className="symbol-list-container">
           <SymbolList onSelectSymbol={handleSelectSymbol} />

@@ -3,21 +3,21 @@
   display: flex;
   width: 100%;
   gap: 0;
-  /* Remove o espaço entre as tabelas */
+}
+.app-tilte {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 55px;  
+
 }
 
-/* Estilo individual para cada tabela */
 .symbol-list-container,
 .price-table-container {
   width: 50%;
-  /* Cada tabela vai ocupar metade da largura */
   margin: 0;
-  /* Remove as margens */
   padding: 0;
-  /* Remove o preenchimento */
 }
 
-/* Remova bordas ou margens extras ao redor da tabela */
 .symbol-list ul {
   margin: 0;
   padding: 0;
@@ -30,13 +30,11 @@
 
 .symbol-list {
   border-right: 1px solid #ddd;
-  /* Adiciona uma borda direita à lista de símbolos */
 }
 
 .price-table {
   width: 100%;
   border-collapse: collapse;
-  /* Remove o espaço entre células */
 }
 
 .price-table th,
@@ -44,16 +42,15 @@
   padding: 10px;
   border: 1px solid #ddd;
   text-align: center;
+  text-transform: uppercase;
 }
 
-/* Ajustes visuais adicionais */
 .symbol-list input[type="checkbox"] {
   margin-right: 10px;
-  /* Ajuste de espaçamento */
 }
 
 .price-table td,
 .price-table th {
   white-space: nowrap;
-  /* Impede que o texto quebre */
 }
+
